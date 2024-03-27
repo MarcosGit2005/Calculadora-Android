@@ -20,11 +20,11 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/buttonC"
+                android:id="@+id/buttonAC"
                 android:layout_width="match_parent"
                 android:layout_height="72dp"
                 android:layout_span="2"
-                android:text="C"
+                android:text="AC"
                 android:textSize="24sp" />
 
             <Button

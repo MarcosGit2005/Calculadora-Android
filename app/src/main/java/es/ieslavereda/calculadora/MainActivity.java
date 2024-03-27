@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         deshabDiv = findViewById(R.id.checkBoxDividir);
 
         buttonClearE = findViewById(R.id.buttonCE);
-        buttonClear = findViewById(R.id.buttonC);
+        buttonClear = findViewById(R.id.buttonAC);
         buttonEquals = findViewById(R.id.buttonEquals);
 
         buttonSuma = findViewById(R.id.buttonMas);
