@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
-    private Double operando;
+    private double operando;
     private Operacion operacion;
     private CheckBox MostrarOpcionesDeshab;
     private LinearLayout opcionesDeshab;
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         buttonClear.setOnClickListener(view -> {
             textView.setText("0");
             operacion = null;
-            operando = null;
+            operando = 0.0;
             textViewResultado.setVisibility(View.INVISIBLE);
         });
         buttonClearE.setOnClickListener(view -> {
@@ -93,7 +93,11 @@ public class MainActivity extends AppCompatActivity {
                         operando=operando/Double.parseDouble(textView.getText().toString());
                         break;
                 }
-                textViewResultado.setText("Resultado: "+operando);
+                int operandoInt = (int)operando;
+                if (operando%1==0.0)
+                    textViewResultado.setText("Resultado: "+operandoInt);
+                else
+                    textViewResultado.setText("Resultado: "+operando);
                 textView.setText("0");
                 operacion=null;
             }
@@ -130,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
         if (button.getId()==R.id.buttonDivid && deshabDiv.isChecked())
             return;
 
-        if (operando==null)
+        if (operando==0.0)
             operando = Double.parseDouble(textView.getText().toString());
         if (operacion!=null && !textView.getText().toString().equals("0")){
             switch (operacion) {
@@ -148,22 +152,35 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
         }
+        int operandoInt = (int)operando;
         switch (button.getText().toString()){
             case "+":
                 operacion = Operacion.SUMA;
-                textViewResultado.setText(operando + " + ");
+                if (operando%1==0.0)
+                    textViewResultado.setText(operandoInt + " + ");
+                else
+                    textViewResultado.setText(operando + " + ");
                 break;
             case "-":
                 operacion = Operacion.RESTA;
-                textViewResultado.setText(operando + " - ");
+                if (operando%1==0.0)
+                    textViewResultado.setText(operandoInt + " - ");
+                else
+                    textViewResultado.setText(operando + " - ");
                 break;
             case "*":
                 operacion = Operacion.MULTIPLICACION;
-                textViewResultado.setText(operando + " * ");
+                if (operando%1==0.0)
+                    textViewResultado.setText(operandoInt + " * ");
+                else
+                    textViewResultado.setText(operando + " * ");
                 break;
             case "/":
                 operacion = Operacion.DIVISION;
-                textViewResultado.setText(operando + " / ");
+                if (operando%1==0.0)
+                    textViewResultado.setText(operandoInt + " / ");
+                else
+                    textViewResultado.setText(operando + " / ");
                 break;
         }
         textViewResultado.setVisibility(View.VISIBLE);
