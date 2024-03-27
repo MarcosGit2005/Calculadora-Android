@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="320dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/buttonC"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_span="2"
+                android:text="C"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/buttonCE"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_column="2"
+                android:layout_span="2"
+                android:text="CE"
+                android:textSize="24sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:onClick="onClickNumero"
+                android:text="1"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:onClick="onClickNumero"
+                android:text="2"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:onClick="onClickNumero"
+                android:text="3"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/buttonDivid"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:onClick="onClickOperacion"
+                android:text="/"
+                android:textSize="24sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:onClick="onClickNumero"
+                android:text="4"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:onClick="onClickNumero"
+                android:text="5"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:onClick="onClickNumero"
+                android:text="6"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/buttonMulti"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:onClick="onClickOperacion"
+                android:text="*"
+                android:textSize="24sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:onClick="onClickNumero"
+                android:text="7"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:onClick="onClickNumero"
+                android:text="8"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:onClick="onClickNumero"
+                android:text="9"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/buttonMenos"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:onClick="onClickOperacion"
+                android:text="-"
+                android:textSize="24sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="326dp"
+            android:layout_height="49dp">
+
+            <Button
+                android:id="@+id/buttonPoint"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:onClick="onClickNumero"
+                android:text="."
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/button0"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:onClick="onClickNumero"
+                android:text="0"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/buttonEquals"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:text="="
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/buttonMas"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:onClick="onClickOperacion"
+                android:text="+"
+                android:textSize="24sp" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="300dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="16dp"
+        android:text="0"
+        android:textAlignment="viewEnd"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Mostrar opciones para deshabilitar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/opcionesDeshabilitar"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox">
+
+        <CheckBox
+            android:id="@+id/checkBoxSumar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClickDeshab"
+            android:text="Sumar" />
+
+        <CheckBox
+            android:id="@+id/checkBoxRestar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClickDeshab"
+            android:text="Restar" />
+
+        <CheckBox
+            android:id="@+id/checkBoxMultiplicar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClickDeshab"
+            android:text="Multiplicar" />
+
+        <CheckBox
+            android:id="@+id/checkBoxDividir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClickDeshab"
+            android:text="Dividir" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resultado: 0"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/textView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
