@@ -1,5 +1,6 @@
 package es.ieslavereda.calculadora;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -10,17 +11,21 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity {
     private double operando;
     private Operacion operacion;
+    private TextView textView;
+    private TextView textViewResultado;
+
     private CheckBox MostrarOpcionesDeshab;
     private LinearLayout opcionesDeshab;
     private Button buttonClearE;
     private Button buttonClear;
     private Button buttonEquals;
-    private TextView textView;
-    private TextView textViewResultado;
     private Button buttonSuma;
     private Button buttonResta;
     private Button buttonMulti;
@@ -34,6 +39,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (savedInstanceState!=null){ // Si no es nulo hay que deserializar lo que ha guardado
+            operando = savedInstanceState.getDouble("operando");
+            //operacion = (Operacion) savedInstanceState.getSerializable("operacion");
+            textView = (TextView) savedInstanceState.getSerializable("textView");
+            textViewResultado = (TextView) savedInstanceState.getSerializable("textViewResultado");
+        }
 
         MostrarOpcionesDeshab = findViewById(R.id.checkBox);
         opcionesDeshab = findViewById(R.id.opcionesDeshabilitar);
@@ -219,5 +231,13 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
         }
+    }
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState){
+        super.onSaveInstanceState(outState);
+        outState.putDouble("operando",operando);
+        //outState.putSerializable("operacion",(Serializable) operacion);
+        outState.putSerializable("textView",(Serializable) textView);
+        outState.putSerializable("textViewResultado",(Serializable) textViewResultado);
     }
 }
